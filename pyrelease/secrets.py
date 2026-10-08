@@ -3,7 +3,7 @@ import keyring
 import getpass
 import platform
 
-SERVICE = "pyrelease"
+SERVICE = "puba"
 
 
 def get_pypi_token():
@@ -21,7 +21,7 @@ def get_pypi_token():
         return token
 
     # 2. Keyring
-    token = keyring.get_password(SERVICE, "pyrelease")
+    token = keyring.get_password(SERVICE, "puba")
     if token:
         backend = keyring.get_keyring()
         print(f"Using PyPI token stored in {backend}.")
@@ -38,7 +38,7 @@ def store_token():
     """
     token = getpass.getpass("Enter PyPI token: ")
 
-    keyring.set_password(SERVICE, "pyrelease", token)
+    keyring.set_password(SERVICE, "puba", token)
 
     system = platform.system()
 
@@ -52,5 +52,5 @@ def store_token():
         location = "Unknown secure store"
 
     print(
-        f"PyPI token stored securely in {location}. You can now run 'pyrelease publish' without re-entering it."
+        f"PyPI token stored securely in {location}. You can now run 'puba publish' without re-entering it."
     )

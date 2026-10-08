@@ -3,7 +3,7 @@ from .pipeline import release, run_checks_only
 from .secrets import store_token
 
 HELP_TEXT = """
-pyrelease - Safe Python package release tool
+puba - Safe Python package release tool
 
 Commands:
   auth       Store PyPI token securely

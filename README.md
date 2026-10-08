@@ -1,4 +1,4 @@
-# pyrelease
+# puba
 
 **Safe Python package release CLI.**
 
@@ -25,7 +25,7 @@ Optional tools, used if installed:
 ### 1. Store your PyPI token (one time)
 
 ```bash
-pyrelease auth
+puba auth
 ```
 
 The token is saved in your system keyring (macOS Keychain, Windows Credential Manager, or a Linux keyring backend).
@@ -33,7 +33,7 @@ The token is saved in your system keyring (macOS Keychain, Windows Credential Ma
 ### 2. Run the safety checks
 
 ```bash
-pyrelease checks
+puba checks
 ```
 
 This:
@@ -49,15 +49,15 @@ Nothing is uploaded.
 ### 3. Publish
 
 ```bash
-pyrelease publish          # run the checks, build and upload to PyPI
-pyrelease publish --test   # upload to TestPyPI instead
-pyrelease publish --dry    # run the checks and build, but don't upload
+puba publish          # run the checks, build and upload to PyPI
+puba publish --test   # upload to TestPyPI instead
+puba publish --dry    # run the checks and build, but don't upload
 ```
 
 ### Help
 
 ```bash
-pyrelease help
+puba help
 ```
 
 ## Token lookup
@@ -65,7 +65,7 @@ pyrelease help
 When publishing, the token is taken from, in order:
 
 1. The `PYPI_TOKEN` environment variable
-2. The system keyring (saved with `pyrelease auth`)
+2. The system keyring (saved with `puba auth`)
 3. A prompt
 
 The same token is used for PyPI and TestPyPI.
@@ -74,7 +74,7 @@ The same token is used for PyPI and TestPyPI.
 
 ```bash
 export PYPI_TOKEN=pypi-xxxxxxxxxxxx
-pyrelease publish
+puba publish
 ```
 
 ## License
